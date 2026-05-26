@@ -127,21 +127,25 @@ export default function Trust() {
                 </div>
             </div>
 
-            {/* Read More Button */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 className="mt-12 flex justify-center"
             >
-                <button className="flex items-center gap-4 pl-4 pr-8 py-2.5 border-[2px] border-[#0071AE] rounded-full hover:shadow-xl transition-all duration-300 bg-white group active:scale-95 shadow-lg shadow-blue-500/5">
+                <a
+                    href="https://share.google/af21b2pZRuYXzYTF1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 pl-4 pr-8 py-2.5 border-[2px] border-[#0071AE] rounded-full hover:shadow-xl  transition-all duration-300 bg-white hover:bg-gray-900 group active:scale-95 shadow-lg shadow-blue-500/5 cursor-pointer"
+                >
                     <div className="w-12 h-12 bg-[#0071AE] rounded-full flex-shrink-0 flex items-center justify-center">
                         <span className="text-white text-3xl font-bold [text-shadow:-2px_2px_0_#0E72A0]">
                             G
                         </span>
                     </div>
                     <span className="text-2xl font-semibold text-black tracking-tight">Read More</span>
-                </button>
+                </a>
             </motion.div>
         </section>
     );

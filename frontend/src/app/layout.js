@@ -12,8 +12,8 @@ const catamaran = Catamaran({
 });
 
 export const metadata = {
-  title: "KhemTech Retail",
-  description: "Welcome to KhemTech Retail",
+  title: "KhemTech Retail - Wilmington, DE",
+  description: "Welcome to KhemTech Retail Wilmington, DE",
   icons: {
     icon: "/images/khemtech-favicon.webp",
     shortcut: "/images/khemtech-favicon.webp",
