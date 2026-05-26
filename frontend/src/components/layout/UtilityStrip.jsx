@@ -59,7 +59,7 @@ export default function UtilityStrip() {
       <div className="w-full h-full px-[3%] flex items-center justify-between text-[12px] md:text-[14px] font-medium uppercase tracking-wider">
 
         {/* Tabs */}
-        <div className="relative flex items-center gap-2 md:gap-4 h-full">
+        <div className="relative flex items-center gap-0 md:gap-4 h-full">
           {tabs.map((tab) => {
             const isActive = activeTab === tab;
 
@@ -68,7 +68,7 @@ export default function UtilityStrip() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={cn(
-                  "relative px-3 md:px-4 h-full flex items-center justify-center transition-all duration-300 ease-in-out",
+                  "relative px-2 md:px-4 h-full flex items-center justify-center transition-all duration-300 ease-in-out",
                   isActive
                     ? "text-gray-900"
                     : "text-gray-500 hover:text-gray-900"
@@ -95,10 +95,10 @@ export default function UtilityStrip() {
         <div className="relative h-full flex items-center" ref={dropdownRef}>
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-1 md:gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
+            className="flex items-center gap-1.5 md:gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
           >
             <MapPin className="w-4 h-4 -translate-y-[1px]" />
-            <span className="leading-none">Wilmington, Delaware</span>
+            <span className="leading-none whitespace-nowrap">Wilmington, Delaware</span>
           </button>
 
           <AnimatePresence>
