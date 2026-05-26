@@ -16,10 +16,10 @@ const locationItems = [
     name: "Pennsauken, New Jersey",
     link: "https://kt-retail-pennsauken.vercel.app/",
   },
-  {
-    name: "Wilmington, Delaware",
-    link: "https://kt-retail-wilmington.vercel.app/",
-  },
+  // {
+  //   name: "Wilmington, Delaware",
+  //   link: "https://kt-retail-wilmington.vercel.app/",
+  // },
 ];
 
 export default function UtilityStrip() {
@@ -57,7 +57,7 @@ export default function UtilityStrip() {
       )}
     >
       <div className="w-full h-full px-[3%] flex items-center justify-between text-[12px] md:text-[14px] font-medium uppercase tracking-wider">
-        
+
         {/* Tabs */}
         <div className="relative flex items-center gap-2 md:gap-4 h-full">
           {tabs.map((tab) => {
@@ -93,12 +93,12 @@ export default function UtilityStrip() {
 
         {/* Locations with Dropdown */}
         <div className="relative h-full flex items-center" ref={dropdownRef}>
-          <button 
+          <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="flex items-center gap-1 md:gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
           >
             <MapPin className="w-4 h-4 -translate-y-[1px]" />
-            <span className="leading-none">Locations</span>
+            <span className="leading-none">Wilmington, Delaware</span>
           </button>
 
           <AnimatePresence>
