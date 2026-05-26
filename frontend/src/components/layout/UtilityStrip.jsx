@@ -108,7 +108,7 @@ export default function UtilityStrip() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
                 transition={{ duration: 0.15, ease: "easeOut" }}
-                className="absolute right-0 top-full mt-1 w-64 bg-white border border-gray-200 rounded-2xl shadow-xl py-2.5 z-[70] normal-case tracking-normal border-t-2 border-t-[#004A7E]"
+                className="absolute right-0 top-full mt-1 w-64 bg-white border border-gray-200 rounded-2xl shadow-xl py-2.5 z-[70] normal-case tracking-normal"
               >
                 {locationItems.map((item) => (
                   <a
