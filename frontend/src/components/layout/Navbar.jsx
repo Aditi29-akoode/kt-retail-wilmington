@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import Logo from "@/components/ui/Logo";
-import { Menu, ArrowUpRight, X, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -13,12 +13,6 @@ const NAV_LINKS = [
     {
         label: "About Us",
         href: "/",
-        // dropdown: [
-        //     { label: "Our Story", href: "/about-us#our-story" },
-        //     { label: "Social Medias", href: "https://kt-directory.vercel.app", target: "_blank", rel: "noopener noreferrer" },
-        //     { label: "Directory", href: "https://kt-directory.vercel.app", target: "_blank", rel: "noopener noreferrer" },
-        //     { label: "Terms & Conditions", href: "/privacy-policy" },
-        // ]
     },
     {
         label: "Services",
@@ -36,7 +30,6 @@ const NAV_LINKS = [
 
 
 export default function Navbar({ variant = "main", className }) {
-    const isSpecial = variant === "secondary";
     const links = NAV_LINKS;
     const pathname = usePathname();
 
