@@ -98,7 +98,7 @@ export default function UtilityStrip() {
             className="flex items-center gap-1.5 md:gap-2 text-gray-500 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
           >
             <MapPin className="w-4 h-4 -translate-y-[1px]" />
-            <span className="leading-none whitespace-nowrap">Wilmington, Delaware</span>
+            <span className="leading-none whitespace-nowrap">Wilmingtonss, Delaware</span>
           </button>
 
           <AnimatePresence>
