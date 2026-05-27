@@ -75,7 +75,6 @@ export default function Trust() {
                     In our 2+ years being in Wilmington, KhemTech Repair has gathered a reputation of quality repairs. Read what people experienced:                </motion.p>
             </div>
 
-            {/* Marquee Rows */}
             <div className="flex flex-col gap-0">
                 {/* Row 1 */}
                 <div className="relative flex overflow-hidden py-4 md:py-6">
