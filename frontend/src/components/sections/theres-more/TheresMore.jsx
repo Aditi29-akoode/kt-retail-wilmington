@@ -27,7 +27,7 @@ export default function TheresMore() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center max-w-[80%] mb-12 md:mb-16"
+                    className="text-center md:max-w-[80%] max-w-[90%] mb-12 md:mb-16"
                 >
                     <h2 className="text-5xl md:text-7xl font-black text-black text-gray-900 tracking-tight mb-6">
                         there&apos;s <span className="text-[#004A7E] text-5xl md:text-[5rem] uppercase">MORE</span><span className="text-5xl md:text-[5rem] text-black font-black">!?</span>

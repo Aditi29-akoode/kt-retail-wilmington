@@ -29,6 +29,7 @@ export default function WhyUs() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
+                    className="px-4 md:px-0"
                 >
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}

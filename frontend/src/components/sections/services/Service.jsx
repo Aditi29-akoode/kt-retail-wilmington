@@ -43,7 +43,7 @@ const CONTAINER_VARIANTS = {
         transition: {
             staggerChildren: 0.15,
         },
-    },  
+    },
 };
 
 const ITEM_VARIANTS = {
@@ -99,7 +99,7 @@ export default function ServicesCarousel() {
     return (
         <section className="w-full py-16 font-sans">
             {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-8">
+            <div className="text-center md:max-w-3xl max-w-[90%] mx-auto mb-8">
                 <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}

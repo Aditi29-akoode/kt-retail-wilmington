@@ -39,13 +39,11 @@ export default function Navbar({ variant = "main", className }) {
     const [hoveredLink, setHoveredLink] = useState(null);
     const [mobileExpanded, setMobileExpanded] = useState(null);
 
-    // Close menu when route changes
     useEffect(() => {
         setIsOpen(false);
         setMobileExpanded(null);
     }, [pathname]);
 
-    // Prevent scroll when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -89,14 +87,14 @@ export default function Navbar({ variant = "main", className }) {
             className
         )}>
             <div ref={navRef} className="relative bg-white/100 backdrop-blur-md border border-gray-100 rounded-full px-4 py-2 flex items-center justify-between gap-0 
-shadow-[-2px_2px_10px_rgba(203,203,203,0.3),0px_0px_6px_rgba(213,220,225,0.4)] transition-all duration-300">
+            shadow-[-2px_2px_10px_rgba(203,203,203,0.3),0px_0px_6px_rgba(213,220,225,0.4)] transition-all duration-300">
                 <Logo
                     className="ml-4"
                     onClick={(e) => {
                         setIsOpen(false);
                         if (pathname === "/") {
                             e.preventDefault();
-                            window.history.pushState(null, "", "/"); 
+                            window.history.pushState(null, "", "/");
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }
                     }}
@@ -116,7 +114,7 @@ shadow-[-2px_2px_10px_rgba(203,203,203,0.3),0px_0px_6px_rgba(213,220,225,0.4)] t
                                     onClick={(e) => {
                                         if (link.href === "/about-us") {
                                             e.preventDefault();
-                                            window.location.href = "/about-us"; // force reset hash
+                                            window.location.href = "/about-us";
                                         }
                                     }}
                                     className="text-gray-800 hover:text-black font-catamaran font-semibold text-lg transition-colors"
