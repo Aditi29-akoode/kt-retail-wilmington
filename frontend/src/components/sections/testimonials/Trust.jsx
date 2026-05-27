@@ -137,7 +137,7 @@ export default function Trust() {
                     href="https://share.google/af21b2pZRuYXzYTF1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 pl-4 pr-8 py-2.5 border-[2px] border-[#0071AE] rounded-full hover:shadow-xl  transition-all duration-300 bg-white hover:bg-gray-900 group active:scale-95 shadow-lg shadow-blue-500/5 cursor-pointer"
+                    className="flex items-center gap-4 pl-4 pr-8 py-2.5 border-[2px] border-[#0071AE] rounded-full hover:shadow-xl  transition-all duration-300 bg-white group active:scale-95 shadow-lg shadow-blue-500/5 cursor-pointer"
                 >
                     <div className="w-12 h-12 bg-[#0071AE] rounded-full flex-shrink-0 flex items-center justify-center">
                         <span className="text-white text-3xl font-bold [text-shadow:-2px_2px_0_#0E72A0]">
