@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import GradientCTA from "@/components/ui/GradientCta";
 import { useState, useEffect, useRef } from "react";
 
 export default function ShowDontTell() {

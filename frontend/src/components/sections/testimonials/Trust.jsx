@@ -7,53 +7,52 @@ const testimonials = [
     {
         name: "Sophie Moore",
         handle: "@sophiemoore",
-        text: "It's amazing how simple it is to set up workflows. The terminal looks clean, and everything executes without errors.",
+        text: "Got my phone fixed here and it began overheating. Came back and he helped me figure out the problem and fixed it for me again! Great people and very nice and informative.",
         avatar: "https://i.pravatar.cc/150?u=sophie"
     },
     {
         name: "Matt Cannon",
         handle: "@mattcannon",
-        text: "Running tests and deployments with one command is incredible. The interface feels modern, and nothing ever slows me down.",
+        text: "Very professional. Gave estimated 2-3 days and completed repairs in less than 24 hours. Beautiful location as well definitely would recommend!!!!",
         avatar: "https://i.pravatar.cc/150?u=matt"
     },
     {
         name: "Lilly Woods",
         handle: "@lillywoods",
-        text: "The integration with Git is smooth and reliable. The terminal feels fresh, and pushing code has never been easier.",
+        text: "Amazing customer service my phone costed $310 to get fixed the front and back but it was very worth it ! oh not to mention I was giving a phone case",
         avatar: "https://i.pravatar.cc/150?u=lilly"
     },
     {
         name: "Maya Collins",
         handle: "@mayacollins",
-        text: "The feedback on running processes is extremely helpful. The terminal feels alive, and monitoring results is now painless.",
+        text: "Amazing got my movie out of my ps4 instantly they find the right size in seconds and wow im so relieved that this movie came out lol thank you guys again!!!",
         avatar: "https://i.pravatar.cc/150?u=maya"
     },
     {
         name: "Andy Smith",
         handle: "@andyhouston",
-        text: "I love how smart the autocomplete is in daily tasks. The CLI feels intuitive, and every shortcut works perfectly well.",
+        text: "They offer excellent customer service. Staff is very knowledgeable, personable and quick to resolve issue.",
         avatar: "https://i.pravatar.cc/150?u=andy"
     },
     {
         name: "Sandy Houston",
         handle: "@sandyhouston",
-        text: "It's so quick to schedule automated jobs from the terminal. The design feels lightweight, and tasks finish right on time.",
+        text: "I woke up to my phone screen damaged and had it fixed by noon the same day. Khem Tech is very fast and very fairly priced. Highly recommend!!",
         avatar: "https://i.pravatar.cc/150?u=sandy"
     },
     {
         name: "Patrick Meyer",
         handle: "@patrickmeyer",
-        text: "I like how straightforward it is to customize prompts. The CLI feels flexible, and everything adapts to my workflow.",
+        text: "I pad repair went far and beyond the call of duty. Very professional. Found broken on and off switches fixed them without even asking !!!!! Great repair highly recommended!!!!",
         avatar: "https://i.pravatar.cc/150?u=patrick"
     },
     {
         name: "James Wilson",
         handle: "@jwilson",
-        text: "The support team is top-notch. They helped me solve a complex issue in minutes. Highly recommended!",
+        text: "Go in and see Gary he’s a good honest and happy man he’ll get your phone fixed same day definitely recommend great customer service",
         avatar: "https://i.pravatar.cc/150?u=james"
     }
 ];
-
 export default function Trust() {
     return (
         <section className="md:pb-24 md:pt-24 pb-12 pt-18 bg-white overflow-hidden" id="testimonials">
