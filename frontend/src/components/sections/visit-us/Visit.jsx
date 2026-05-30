@@ -1,137 +1,189 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { useRef } from "react";
-import { motion, useTransform, useSpring, useScroll } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
-// --- ANIMATION VARIANTS ---
-const CONTAINER_VARIANTS = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.15,
-            delayChildren: 0.3,
-        },
+const mediaItems = [
+    {
+        type: "image",
+        src: "/images/landing-page/visit-us/image.png",
+        alt: "KhemTech Pennsauken Store Exterior",
     },
-};
-
-const ITEM_VARIANTS = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.2,
-            ease: [0.19, 1, 0.22, 1],
-            opacity: { duration: 0.8, ease: "linear" }
-        },
+    {
+        type: "image",
+        src: "/images/landing-page/visit-us/image1.png",
+        alt: "KhemTech Pennsauken Store Exterior",
     },
-};
+    {
+        type: "image",
+        src: "/images/landing-page/visit-us/image2.png",
+        alt: "KhemTech Pennsauken Store Interior Showcase",
+    },
+    {
+        type: "image",
+        src: "/images/landing-page/visit-us/image3.png",
+        alt: "KhemTech Repair Demo Video",
+    },
+];
 
 export default function Visit() {
-    const sectionRef = useRef(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Get scroll progress for the parallax clouds
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start end", "end start"]
-    });
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? mediaItems.length - 1 : prevIndex - 1
+        );
+    };
 
-    // Parallax values for the clouds
-    const cloudOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-    const cloudLeftX = useSpring(useTransform(scrollYProgress, [0, 0.2, 1], [-400, 0, 0]), { stiffness: 100, damping: 30 });
-    const cloudLeftY = useSpring(useTransform(scrollYProgress, [0, 0.2, 1], [-30, 0, 0]), { stiffness: 100, damping: 30 });
-    const cloudRightX = useSpring(useTransform(scrollYProgress, [0, 0.2, 1], [400, 0, 0]), { stiffness: 100, damping: 30 });
-    const cloudRightY = useSpring(useTransform(scrollYProgress, [0, 0.2, 1], [-30, 0, 0]), { stiffness: 100, damping: 30 });
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === mediaItems.length - 1 ? 0 : prevIndex + 1
+        );
+    };
 
     return (
         <section
-            ref={sectionRef}
             id="visit"
-            className="relative w-full overflow-hidden bg-white rounded-b-[20px] min-[1025px]:rounded-b-none"
+            className="relative w-full bg-white py-16 md:py-24 font-sans overflow-hidden"
         >
-            <div className="relative w-full flex flex-col">
-                {/* Content Section: Relative on mobile with blue bg, Absolute overlay on desktop */}
-                <div className="relative min-[1025px]:absolute min-[1025px]:inset-0 z-20 flex flex-col items-center pt-20 md:pt-[4%] min-[1025px]:pt-[2em] -pb-12 min-[1025px]:pb-0 px-4 md:px-6 
-                    bg-[linear-gradient(to_bottom,#ffffff_0%,#ffffff_30%,rgba(255,255,255,0)_70%),linear-gradient(to_right,#e6f4ff_0%,#f3f9fe_100%)]
-                    min-[1025px]:bg-transparent min-[1025px]:bg-none"
-                >
-                    {/* Parallax Clouds (Desktop Only) */}
-                    <div className="absolute hidden min-[1025px]:block inset-0 pointer-events-none z-0">
-                        <motion.div style={{ y: cloudLeftY, x: cloudLeftX, opacity: cloudOpacity }} className="absolute -top-16 left-0">
-                            <Image src="/images/landing-page/visit-us/cloud-left.png" alt="cloud" width={400} height={250} className="w-[400px] h-auto" />
-                        </motion.div>
-                        <motion.div style={{ y: cloudRightY, x: cloudRightX, opacity: cloudOpacity }} className="absolute -top-16 right-0">
-                            <Image src="/images/landing-page/visit-us/cloud-right.png" alt="cloud" width={450} height={300} className="w-[450px] h-auto" />
-                        </motion.div>
-                    </div>
+            <style dangerouslySetInnerHTML={{
+                __html: `
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}} />
+            <div className="max-w-6xl mx-auto px-4 md:px-6 flex flex-col items-center text-center">
+                {/* Title */}
+                <h2 className="text-gray-950 text-3xl md:text-[2.5rem] font-extrabold tracking-tight mb-2">
+                    Visit Us!
+                </h2>
 
-                    {/* Text Content */}
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={CONTAINER_VARIANTS}
-                        className="relative flex flex-col items-center text-center max-w-5xl mx-auto z-10"
+                {/* Subtitle */}
+                <h3 className="text-gray-900 text-lg md:text-xl font-bold mb-4 tracking-tight">
+                    We're open 7-days a week
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-700 text-base md:text-lg font-medium max-w-2xl mb-4 leading-relaxed px-2">
+                    Walk-ins are welcome, and we provide a free diagnostic & quote before proceeding with any work.
+                </p>
+
+                {/* Location Info */}
+                <p className="text-gray-800 text-base md:text-lg font-medium italic mb-6">
+                    📍Wilmington, Delaware
+                </p>
+
+                {/* Directions Button */}
+                <div className="mb-12">
+                    <a
+                        href={"https://www.google.com/maps/place/KhemTech+-+Phone,+Tablet,+Computer,+Game+Console+Repair+%26+Accessories+(Concord+Mall)/@39.8235228,-75.5440403,19z/data=!3m1!5s0x89c6fb46c78f6021:0x10f0d828ef272e2f!4m14!1m7!3m6!1s0x89c6fbe2cd9bb5cd:0x1410cb2ec7ed9c3e!2sKhemTech+-+Phone,+Tablet,+Computer,+Game+Console+Repair+%26+Accessories+(Concord+Mall)!8m2!3d39.8234054!4d-75.5440242!16s%2Fg%2F11xfvvdh1s!3m5!1s0x89c6fbe2cd9bb5cd:0x1410cb2ec7ed9c3e!8m2!3d39.8234054!4d-75.5440242!16s%2Fg%2F11xfvvdh1s?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2.5 pl-2 pr-5 py-2 border border-gray-200 rounded-3xl bg-white shadow-xs hover:shadow-sm hover:border-gray-300 transition-all font-semibold text-gray-800 text-sm md:text-base"
                     >
-                        <motion.span
-                            variants={ITEM_VARIANTS}
-                            className="text-xl text-gray-800 md:text-[2rem] font-extrabold md:mb-6 mb-2 tracking-tight"
-                        >
-                            Visit Us!
-                        </motion.span>
-
-                        <motion.h2
-                            variants={ITEM_VARIANTS}
-                            className="text-gray-900 text-lg md:text-3xl leading-snug font-bold md:mb-6 mb-2 tracking-tight leading-tight"
-                        >
-                            {"We're open 7-days a week"}
-                        </motion.h2>
-
-                        <motion.p
-                            variants={ITEM_VARIANTS}
-                            className="text-gray-800 text-2xl md:text-3xl leading-snug font-semibold max-w-3xl mb-10"
-                        >
-                            Walk-ins are welcome, and we provide a free diagnostic & quote before proceeding with any work.
-                        </motion.p>
-                        <motion.p
-                            variants={ITEM_VARIANTS}
-                            className="text-gray-800 text-2xl md:text-2xl leading-snug font-semibold italic max-w-4xl mb-12"
-                        >
-                            📍Wilmington, Delaware
-                        </motion.p>
-
-                        <motion.div variants={ITEM_VARIANTS}>
-                            <Link href="/">
-                                <Button
-                                    variant="outline"
-                                    size="lg"
-                                    rotate={true}
-                                    icon={ArrowUpRight}
-                                    className="border-gray-900 text-gray-900 shadow-lg bg-white/80 backdrop-blur-sm"
-                                >
-                                    Directions
-                                </Button>
-                            </Link>
-                        </motion.div>
-                    </motion.div>
+                        <div className="flex items-center justify-center w-8 h-8 rounded-full border border-blue-500/30 text-[#00AEFF] bg-blue-50/50">
+                            <ArrowUpRight className="w-4 h-4 stroke-[3] transition-transform duration-300 group-hover:rotate-45" />
+                        </div>
+                        <span className="tracking-wide text-xl">Directions</span>
+                    </a>
                 </div>
 
-                {/* Image Section - Sits below on mobile, provides background on desktop */}
-                <div className="relative w-full z-0 -mt-12 min-[730px]:-mt-[25%] min-[1025px]:mt-0">
-                    <Image
-                        src="/images/landing-page/visit-us/store-graphic.webp"
-                        alt="KhemTech Storefront"
-                        width={1920}
-                        height={1080}
-                        className="w-full h-auto"
-                        priority
-                    />
+                {/* Carousel Container */}
+                <div className="relative w-full max-w-4xl flex flex-col items-center">
+                    {/* Main Viewport Row */}
+                    <div className="relative w-full flex items-center justify-center px-4 md:px-0">
+                        {/* Left Navigation Arrow */}
+                        <button
+                            onClick={handlePrev}
+                            className="absolute -left-2 md:-left-20 z-10 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 active:scale-95"
+                            aria-label="Previous slide"
+                        >
+                            <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
+                        </button>
+
+                        {/* Main Media Viewport */}
+                        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[2rem] bg-neutral-100 shadow-md">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={currentIndex}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="w-full h-full relative"
+                                >
+                                    {mediaItems[currentIndex].type === "image" ? (
+                                        <Image
+                                            src={mediaItems[currentIndex].src}
+                                            alt={mediaItems[currentIndex].alt}
+                                            fill
+                                            sizes="(max-w-4xl) 100vw, 896px"
+                                            className="object-contain"
+                                            priority
+                                        />
+                                    ) : (
+                                        <video
+                                            src={mediaItems[currentIndex].src}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-contain"
+                                        />
+                                    )}
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Right Navigation Arrow */}
+                        <button
+                            onClick={handleNext}
+                            className="absolute -right-2 md:-right-20 z-10 w-11 h-11 md:w-14 md:h-14 rounded-full bg-black text-white hover:bg-neutral-800 transition-colors flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 active:scale-95"
+                            aria-label="Next slide"
+                        >
+                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
+                        </button>
+                    </div>
+
+                    {/* Thumbnails Navigation Row */}
+                    <div
+                        className="flex items-center gap-3 mt-6 overflow-x-auto px-4 py-2 max-w-full no-scrollbar"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        {mediaItems.map((item, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setCurrentIndex(idx)}
+                                className={`relative w-20 h-14 md:w-24 md:h-16 rounded-xl overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${currentIndex === idx
+                                    ? "border-neutral-900 scale-105 shadow-md"
+                                    : "border-transparent opacity-50 hover:opacity-100"
+                                    }`}
+                            >
+                                {item.type === "image" ? (
+                                    <Image
+                                        src={item.src}
+                                        alt={item.alt}
+                                        fill
+                                        sizes="(max-w-xs) 25vw, 96px"
+                                        className="object-cover"
+                                    />
+                                ) : (
+                                    <video
+                                        src={item.src}
+                                        muted
+                                        playsInline
+                                        preload="metadata"
+                                        className="w-full h-full object-cover pointer-events-none"
+                                    />
+                                )}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
     );
 }
+
