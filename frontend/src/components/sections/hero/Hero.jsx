@@ -32,7 +32,7 @@ export default function Hero() {
 
             <div className="flex flex-col items-center justify-center gap-2 mt-4">
               <a
-                href="https://share.google/6BFO0tweMw1dTCYxQ"
+                href={"https://www.google.com/maps/place/KhemTech+-+Phone,+Tablet,+Computer,+Game+Console+Repair+%26+Accessories+(Concord+Mall)/@39.8235228,-75.5440403,19z/data=!3m1!5s0x89c6fb46c78f6021:0x10f0d828ef272e2f!4m14!1m7!3m6!1s0x89c6fbe2cd9bb5cd:0x1410cb2ec7ed9c3e!2sKhemTech+-+Phone,+Tablet,+Computer,+Game+Console+Repair+%26+Accessories+(Concord+Mall)!8m2!3d39.8234054!4d-75.5440242!16s%2Fg%2F11xfvvdh1s!3m5!1s0x89c6fbe2cd9bb5cd:0x1410cb2ec7ed9c3e!8m2!3d39.8234054!4d-75.5440242!16s%2Fg%2F11xfvvdh1s?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm md:text-base font-semibold text-gray-800 hover:text-[#004A7E] transition-colors underline text-center block"
