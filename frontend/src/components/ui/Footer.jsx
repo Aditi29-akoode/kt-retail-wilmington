@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Heart } from "lucide-react"
 
 // --- ANIMATION VARIANTS ---
 const CONTAINER_VARIANTS = {
@@ -31,7 +32,7 @@ const LIST_ITEM_VARIANTS = {
 
 export function MainFooter() {
     return (
-        <div className="bg-[#F6F6F6] text-black md:pt-16 pt-8 pb-8 px-6">
+        <div className="bg-[#F6F6F6] text-black md:pt-16 pt-8 pb-0 px-6">
             {/* SUBSCRIPTIVE TEXT SECTION */}
 
 
@@ -43,7 +44,7 @@ export function MainFooter() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={CONTAINER_VARIANTS}
-                className="max-w-7xl mx-auto flex flex-wrap justify-between gap-y-10 border-b pb-12 border-gray-200"
+                className="max-w-7xl mx-auto flex flex-wrap justify-between gap-y-10"
             >
                 {/* ADDRESS */}
                 <motion.div
@@ -138,21 +139,19 @@ export function MainFooter() {
                 </div>
             </motion.div>
 
-            <div className="flex mt-8 items-center justify-center">
-                <p className="text-md text-gray-600">
-                    © 2026 KhemTech. | Made with{" "}
+            <div className="w-full max-w-8xl flex mt-12 items-center justify-center border-t pt-8 pb-10 border-gray-200 px-4">
+                <p className="text-md text-gray-600 flex items-center gap-1">
+                    <span>© 2026 KhemTech. | Made with</span>
                     <a
                         href="https://www.akoode.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative inline-block group hover:scale-110 transition-transform"
+                        className="relative inline-flex items-center group"
                     >
-                        ❤️
+                        <Heart className="text-[#327ac6] fill-[#327ac6] w-4 h-4 mb-[3px]" />
 
-                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-0 
-                   hidden group-hover:block 
-                   bg-[#474972] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
-                            AI & Software Company in India | USA
+                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-0 hidden group-hover:block bg-[#474972] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap">
+                            AI & Software company in India | USA
                         </span>
                     </a>
                 </p>
